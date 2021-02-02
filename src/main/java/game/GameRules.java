@@ -15,6 +15,8 @@ public class GameRules {
     ChessBoard board;
 
     public GameRules() {
+        this.turn = true;
+        this.check = false;
         this.board = new ChessBoard();
         for(int i = 0; i < 8; i++) {
             board.addPiece(new Pawn(i, 1, true));
