@@ -3,6 +3,7 @@ package board;
 import board.*;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -33,5 +34,13 @@ public class ChessBoard {
         p.y = endY;
         pieces[startX][startY] = null;
         pieces[endX][endY] = p;
+    }
+
+    public Iterator<ChessPiece> whiteIterator() {
+        return whiteTeam.iterator();
+    }
+
+    public Iterator<ChessPiece> blackIterator() {
+        return blackTeam.iterator();
     }
 }

@@ -2,6 +2,7 @@ package game;
 
 import board.*;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,5 +39,37 @@ public class GameRules {
                 board.addPiece(new King(i, 7, false));
             }
         }
+    }
+
+    public void setMoves() {
+        Iterator<ChessPiece> white = board.whiteIterator();
+        Iterator<ChessPiece> black = board.blackIterator();
+        while(white.hasNext()) {
+
+        }
+    }
+
+    public void setMoves(King piece) {
+
+    }
+
+    public void setMoves(Queen piece) {
+
+    }
+
+    public void setMoves(Bishop piece) {
+
+    }
+
+    public void setMoves(Knight piece) {
+
+    }
+
+    public void setMoves(Rook piece) {
+
+    }
+
+    public void setMoves(Pawn piece) {
+
     }
 }
