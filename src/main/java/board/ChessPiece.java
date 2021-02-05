@@ -13,7 +13,7 @@ public abstract class ChessPiece {
     // True is white
     boolean team;
 
-    private Set<ChessMove> moves;
+    public Set<ChessMove> moves;
 
     public ChessPiece(int x, int y, boolean team) {
         this.x = x;
@@ -24,5 +24,9 @@ public abstract class ChessPiece {
 
     public void setMoves(Set<ChessMove> newMoves) {
         this.moves = moves;
+    }
+
+    public void getMoves() {
+
     }
 }
