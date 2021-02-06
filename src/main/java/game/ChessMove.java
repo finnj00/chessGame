@@ -1,11 +1,11 @@
 package game;
 
 public class ChessMove {
-    public int position;
-    public int rank;
+    public int x;
+    public int y;
 
-    public ChessMove(int position, int rank) {
-        this.position = position;
-        this.rank = rank;
+    public ChessMove(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }
