@@ -45,31 +45,37 @@ public class GameRules {
         Iterator<ChessPiece> white = board.whiteIterator();
         Iterator<ChessPiece> black = board.blackIterator();
         while(white.hasNext()) {
-
+            ChessPiece p = white.next();
+            p.getMoves();
+        }
+        while(black.hasNext()) {
+            black.next().getMoves();
         }
     }
 
-    public void setMoves(King piece) {
-
+    public boolean validateMove(ChessMove move, Bishop piece) {
+        System.out.println("I am a bishop");
+        return true;
+    }
+    public boolean validateMove(ChessMove move, Queen piece) {
+        System.out.println("I am a queen");
+        return false;
+    }
+    public boolean validateMove(ChessMove move, Rook piece) {
+        System.out.println("I am a rook");
+        return false;
+    }
+    public boolean validateMove(ChessMove move, King piece) {
+        System.out.println("I am a king");
+        return false;
+    }
+    public boolean validateMove(ChessMove move, Knight piece) {
+        System.out.println("I am a knight");
+        return false;
+    }
+    public boolean validateMove(ChessMove move, Pawn piece) {
+        System.out.println("I am a pawn");
+        return false;
     }
 
-    public void setMoves(Queen piece) {
-
-    }
-
-    public void setMoves(Bishop piece) {
-
-    }
-
-    public void setMoves(Knight piece) {
-
-    }
-
-    public void setMoves(Rook piece) {
-
-    }
-
-    public void setMoves(Pawn piece) {
-
-    }
 }
