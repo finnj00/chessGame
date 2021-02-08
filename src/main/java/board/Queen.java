@@ -9,7 +9,7 @@ public class Queen extends ChessPiece{
 
     @Override
     public void getMoves(ChessBoard b) {
-        getDiagonals();
-        getPerpendiculars();
+        getDiagonals(b);
+        getPerpendiculars(b);
     }
 }

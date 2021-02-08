@@ -8,6 +8,6 @@ public class Bishop extends ChessPiece{
     }
     @Override
     public void getMoves(ChessBoard b) {
-        getDiagonals();
+        getDiagonals(b);
     }
 }

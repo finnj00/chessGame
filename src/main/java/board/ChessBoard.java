@@ -1,6 +1,7 @@
 package board;
 
 import board.*;
+import game.ChessMove;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -36,8 +37,12 @@ public class ChessBoard {
         pieces[endX][endY] = p;
     }
 
-    public boolean canMove(boolean team, int x, int y) {
-        return pieces[x][y] == null || pieces[x][y].team != team;
+    public void canMove(ChessPiece piece, int x, int y) {
+        if(x > -1 && x < 8 && y > -1 && y < 8) {
+            if(pieces[x][y] == null || pieces[x][y].team != piece.team) {
+                piece.moves.add(new ChessMove(x, y));
+            }
+        }
     }
 
     public Iterator<ChessPiece> whiteIterator() {

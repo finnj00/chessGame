@@ -13,7 +13,7 @@ public class GameRules {
     // True is white
     boolean turn;
 
-    ChessBoard board;
+    public ChessBoard board;
 
     public GameRules() {
         this.turn = true;
@@ -45,8 +45,7 @@ public class GameRules {
         Iterator<ChessPiece> white = board.whiteIterator();
         Iterator<ChessPiece> black = board.blackIterator();
         while(white.hasNext()) {
-            ChessPiece p = white.next();
-            p.getMoves(board);
+            white.next().getMoves(board);
         }
         while(black.hasNext()) {
             black.next().getMoves(board);
