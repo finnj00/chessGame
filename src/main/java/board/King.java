@@ -8,9 +8,11 @@ public class King extends ChessPiece{
     }
 
     @Override
-    public void getMoves() {
+    public void getMoves(ChessBoard b) {
         if(y < 7) {
-            this.moves.add(new ChessMove(x, y + 1));
+            if(b.canMove(this.team, x, y + 1)) {
+                this.moves.add(new ChessMove(x, y + 1));
+            }
             if(x > 0) {
                 this.moves.add(new ChessMove(x - 1, y + 1));
                 this.moves.add(new ChessMove(x - 1, y));

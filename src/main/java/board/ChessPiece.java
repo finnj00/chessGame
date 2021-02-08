@@ -26,7 +26,7 @@ public abstract class ChessPiece {
         this.moves = moves;
     }
 
-    public void getMoves() {
+    public void getMoves(ChessBoard b) {
 
     }
 

@@ -36,6 +36,10 @@ public class ChessBoard {
         pieces[endX][endY] = p;
     }
 
+    public boolean canMove(boolean team, int x, int y) {
+        return pieces[x][y] == null || pieces[x][y].team != team;
+    }
+
     public Iterator<ChessPiece> whiteIterator() {
         return whiteTeam.iterator();
     }

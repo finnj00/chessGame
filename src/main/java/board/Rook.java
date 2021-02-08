@@ -8,7 +8,7 @@ public class Rook extends ChessPiece{
     }
 
     @Override
-    public void getMoves() {
+    public void getMoves(ChessBoard b) {
         getPerpendiculars();
     }
 }

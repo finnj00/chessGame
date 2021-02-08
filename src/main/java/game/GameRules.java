@@ -46,10 +46,10 @@ public class GameRules {
         Iterator<ChessPiece> black = board.blackIterator();
         while(white.hasNext()) {
             ChessPiece p = white.next();
-            p.getMoves();
+            p.getMoves(board);
         }
         while(black.hasNext()) {
-            black.next().getMoves();
+            black.next().getMoves(board);
         }
     }
 

@@ -7,7 +7,7 @@ public class Bishop extends ChessPiece{
         super(x, y, team);
     }
     @Override
-    public void getMoves() {
+    public void getMoves(ChessBoard b) {
         getDiagonals();
     }
 }

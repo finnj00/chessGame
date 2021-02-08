@@ -8,7 +8,7 @@ public class Pawn extends ChessPiece {
         super(x, y, team);
     }
     @Override
-    public void getMoves() {
+    public void getMoves(ChessBoard b) {
         this.moves.clear();
         if(team) {
             if(this.y == 1) {
