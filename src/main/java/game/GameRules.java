@@ -2,18 +2,35 @@ package game;
 
 import board.*;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class GameRules {
-    Map<String, Set<ChessMove>> WhiteMoves;
-    Map<String, Set<ChessMove>> BlackMoves;
+    Map<ChessPiece, Set<ChessMove>> moves;
     boolean check;
     // True is white
     boolean turn;
 
     public ChessBoard board;
+
+    public static void main(String[] args) {
+        GameRules game = new GameRules();
+        while(true) {
+            game.setMoves();
+            if(game.moves.isEmpty()) {
+                break;
+            } else {
+                for(ChessPiece piece : game.moves.keySet()) {
+                    System.out.println("Piece: " + piece.getClass());
+                    for(ChessMove m : piece.moves) {
+                        System.out.println(m.x + ", " + m.y);
+                    }
+                }
+                System.out.print("Move? ");
+                Scanner s = new Scanner(System.in);
+                String move = s.nextLine();
+            }
+        }
+    }
 
     public GameRules() {
         this.turn = true;
@@ -42,39 +59,19 @@ public class GameRules {
     }
 
     public void setMoves() {
-        Iterator<ChessPiece> white = board.whiteIterator();
-        Iterator<ChessPiece> black = board.blackIterator();
-        while(white.hasNext()) {
-            white.next().getMoves(board);
+        int count = 1;
+        Iterator<ChessPiece> i = null;
+        if(this.turn) {
+             i = board.whiteIterator();
+        } else {
+            i = board.blackIterator();
         }
-        while(black.hasNext()) {
-            black.next().getMoves(board);
+        this.moves = new HashMap<ChessPiece, Set<ChessMove>>();
+        while(i.hasNext()) {
+            ChessPiece next = i.next();
+            next.getMoves(this.board);
+            this.moves.put(next, next.moves);
         }
-    }
-
-    public boolean validateMove(ChessMove move, Bishop piece) {
-        System.out.println("I am a bishop");
-        return true;
-    }
-    public boolean validateMove(ChessMove move, Queen piece) {
-        System.out.println("I am a queen");
-        return false;
-    }
-    public boolean validateMove(ChessMove move, Rook piece) {
-        System.out.println("I am a rook");
-        return false;
-    }
-    public boolean validateMove(ChessMove move, King piece) {
-        System.out.println("I am a king");
-        return false;
-    }
-    public boolean validateMove(ChessMove move, Knight piece) {
-        System.out.println("I am a knight");
-        return false;
-    }
-    public boolean validateMove(ChessMove move, Pawn piece) {
-        System.out.println("I am a pawn");
-        return false;
     }
 
 }
